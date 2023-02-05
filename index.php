@@ -269,7 +269,7 @@ else if(preg_match_all("/^(add_purchased_product)$/ui", $_GET['type'])){
         );
         exit();
     }
-    $query = "INSERT INTO `purchased_product`(`product_id`, `user_id`) VALUES ('" . $_GET['product_id'] . "', '". $_GET['user_id'] ."')";
+    $query = "INSERT INTO `purchased product`(`product_id`, `user_id`) VALUES ('" . $_GET['product_id'] . "', '". $_GET['user_id'] ."')";
     $res_query = mysqli_query($connection, $query);
 
     if(!$res_query){
@@ -334,12 +334,11 @@ else if(preg_match_all("/^(add_users)$/ui", $_GET['type'])){
         );
         exit();
     }
-    $query = "INSERT INTO `user`(
+    $query = "INSERT INTO `users`(
         `first_name`, 
         `second_name`, 
         `middle_name`, 
-        `gender`, 
-        `date_of_birth`) VALUES (
+        `gender`) VALUES (
             '" . $_GET['first_name'] . "',
              '". $_GET['second_name'] ."',
              '". $_GET['middle_name'] ."',
